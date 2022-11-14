@@ -1,0 +1,153 @@
+
+<html>
+    <head>
+        
+        <style type="text/css">
+         body {
+  background-color: lightblue;
+}      
+
+   #Section2{display: none};
+     </style>
+     
+    </head>
+     <body>
+             <h1 style="color:blue; text-align: center;">Booking Information</h1>
+      <form name="myform" onsubmit="return Validpassword()" action="newHTML.html" method="post">
+       <div id="Section1">
+       <!--Section 1 Radio button code starts--> 
+       
+ <br><b><h2 style= "color: red"> Choose your destination: </h2></b><br>
+ <input type="radio" name="one" id="One Way" value="One Way" onclick=" checkButton()">One Way<br> 
+ <input type="radio" name="one" id="Round Trip" value="Round Trip"  onclick=" checkButton()" >Round Trip<br> 
+ <!--Radio button code Ends--> 
+ <!--<button type="button" onclick=" checkButton()"> Submit </button>--> 
+     
+ <h3 id="disp" style= "color:green">               </h3>
+ <h4 id="error" style= "color:red">                </h4>
+ </div>        
+ <!--Section  1 Ends -->             
+ <div id="Section2">
+ <!--Section  2 - Make invisible until radio button selected-->       
+       
+       Enter your name: <input type="text" name="myname" id="newmine" pattern="[a-zA-Z]{5,}" title="Only Alphabets with minimum five"><br><br>
+        From: <input type="text" name="start" id="newmine" pattern="[a-zA-z]{1,}"><br><br>
+        To:<input type="text" name="end" id="newmine" pattern="[a-zA-z]{1,}"><br><br>
+        Departure:<input type="date" name="mydepart" id="mydepart"><br><br>
+        Return:<input type="date" name="myreturn" id="myreturn"><br><br> 
+        <h2 style="color:brown"> Number of Passengers</h2>   
+        Adults:<input type="number" name="adults" id="newmine">   
+        Children:<input type="number" name="children" id="newmine"> <br><br>
+        <h2 style="color:rgb(165, 42, 128)">Passenger 1 Details</h1>
+                
+         Enter your name: <input type="text" name="name1" id="newmine" >
+         Gender:<input type="radio" name="gender" id="female" value="female" onclick="checkButton1()">Female
+         <input type="radio" name="gender" id="male" value="male" onclick="checkButton1()">Male
+         <script>                   
+        const radioButtons = document.querySelectorAll('input[name="gender"]');
+        btn.addEventListener("click", () => {
+            let selectedSize;
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+        });
+                </script>
+</body>
+</html>
+         </script>
+          
+         Age:<input type="number" name="age" id="newmine"> 
+         <h2 style="color:rgb(165, 42, 128)">Passenger Details 2</h2>
+         Enter your name: <input type="text" name="name1" id="newmine" >
+         Gender:<input type="radio" name="gender1" id="female" value="female">Female
+         <input type="radio" name="gender1" id="male" value="male">Male
+         <script>                   
+            const radioButtons1 = document.querySelectorAll('input[name="gender1"]');
+            btn.addEventListener("click", () => {
+                let selectedSize;
+                for (const radioButton of radioButtons1) {
+                    if (radioButton.checked) {
+                        selectedSize = radioButton.value;
+                        break;
+                    }
+                }
+            });
+                    </script>
+          
+         Age:<input type="number" name="age" id="newmine">   <br><br>   
+
+         <label for="Food Type">Choose Food Type:</label>
+
+<select name="Food" id="food">
+  <option value="veg">Vegetration</option>
+  <option value="nonveg">Non-vegetration</option>
+  </select>  <label for="Travel Class">Choose Travel Class:</label>
+
+  <select name="Tclass" id="class">
+    <option value="economic">Economic</option>
+    <option value="business">Business</option>
+    </select> <br>
+         
+         <input type="submit" value="Click Here">
+     <!--Section  2 Ends -->    <!--section2.style.display = 'block'; --> 
+     </div>      
+     </form>
+     <script>
+ function checkButton() 
+                     {  
+                         if(document.getElementById('One Way').checked) 
+                          { 
+                            //document.getElementById("disp").innerHTML = document.getElementById("One Way").value; 
+                            document.getElementById("Section2").style.display = "block";
+                           } 
+                         else if(document.getElementById('Round Trip').checked) 
+                              { 
+                                //document.getElementById("disp").innerHTML = document.getElementById("Round Trip").value;   
+                                document.getElementById("Section2").style.display = "block";
+                               } 
+                                        else { 
+                                                document.getElementById("error").innerHTML 
+                                                    = "You have not selected a destination"; 
+                                             } 
+                           
+                                           } 
+            
+           function Validpassword()
+               {
+                      
+                          
+               let username=document.getElementById("newmine").value;
+                  
+                  if (username== "null" || username == "")
+                         {
+                            alert( "enter correctname");
+                            return false;
+                         }
+            
+        var UserDate = document.getElementById("mydepart").value;
+        var UserDate1 = document.getElementById("myreturn").value;
+    var ToDate = new Date();
+    var ToDate1 = new Date();
+
+    if (new Date(UserDate).getTime() <= ToDate.getTime()) {
+          alert("The DepartureDate must be greater or Equal to today date");
+          return false;
+     }
+    return true;
+    if(ToDate1>=Todate){
+    alert("The Return Date must be greater than departure date");
+          return false;
+     }
+    return true;
+
+}
+      
+   </script>
+    </body>
+ 
+ 
+ 
+ </html>
